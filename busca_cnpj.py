@@ -12,8 +12,18 @@ if len(cnpj) == 14:
     dic_requisicao = requisicao.json()
     nome = dic_requisicao['nome_fantasia']
     razao_social = dic_requisicao['razao_social']
-    print(nome)
-    print(razao_social)
+    atividades_principais = dic_requisicao['cnae_fiscal_descricao']
+    #atividades_secundaria = dic_requisicao['descricao']
+    situacao_cadastral = dic_requisicao['descricao_situacao_cadastral']
+    cep_cnpj = dic_requisicao['cep']
+    
+    print(f'Nome: {nome}')
+    print(f'Razão social: {razao_social}')
+    print(f'Atividades Principais: {atividades_principais}')
+    #print(f'Atividades Secundárias: {atividades_secundarias}')
+    print(f'Situação Cadastral: {situacao_cadastral}')
+    print(f'CEP: {cep_cnpj}')
+    
 else:
     print('CNPJ inválido')
     
